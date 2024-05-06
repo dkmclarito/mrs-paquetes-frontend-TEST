@@ -6,6 +6,6 @@ export const navItems = [
   { key: 'customers', title: 'Clientes', href: paths.dashboard.customers, icon: 'users' },
   { key: 'integrations', title: 'Empleados', href: paths.dashboard.integrations, icon: 'plugs-connected' },
   { key: 'settings', title: 'Ajustes', href: paths.dashboard.settings, icon: 'gear-six' },
-  { key: 'account', title: 'Cuenta', href: paths.dashboard.account, icon: 'user' },
+  { key: 'account', title: 'Perfil', href: paths.dashboard.account, icon: 'user' },
   { key: 'error', title: 'Otros', href: paths.errors.notFound, icon: 'x-square' },
 ] satisfies NavItemConfig[];
