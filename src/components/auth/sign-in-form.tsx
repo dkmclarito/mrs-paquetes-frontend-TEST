@@ -17,7 +17,7 @@ import { Eye as EyeIcon } from '@phosphor-icons/react/dist/ssr/Eye';
 import { EyeSlash as EyeSlashIcon } from '@phosphor-icons/react/dist/ssr/EyeSlash';
 import { Controller, useForm } from 'react-hook-form';
 import { z as zod } from 'zod';
-
+import Box from '@mui/material/Box';
 import { paths } from '@/paths';
 import { authClient } from '@/lib/auth/client';
 import { useUser } from '@/hooks/use-user';
@@ -70,16 +70,19 @@ export function SignInForm(): React.JSX.Element {
   );
 
   return (
-    <Stack spacing={4}>
+    <Stack spacing={1}>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box
+              component="img"
+              alt="Widgets"
+              src="/assets/logo-mr-paquetes.png"
+              sx={{ height: 'auto', width: '100%', maxHeight: '350px', maxWidth: '250px' }}
+            />
+      </Box>
       <Stack spacing={1}>
-        <Typography variant="h4">Sign in</Typography>
-        <Typography color="text.secondary" variant="body2">
-          Don&apos;t have an account?{' '}
-          <Link component={RouterLink} href={paths.auth.signUp} underline="hover" variant="subtitle2">
-            Sign up
-          </Link>
-        </Typography>
+        <Typography variant="h4" color={'#635bff'}>Inicia Sesión</Typography>
       </Stack>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={2}>
           <Controller
@@ -129,16 +132,18 @@ export function SignInForm(): React.JSX.Element {
           />
           <div>
             <Link component={RouterLink} href={paths.auth.resetPassword} variant="subtitle2">
-              Forgot password?
+            ¿Olvidó su contraseña?
             </Link>
           </div>
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
           <Button disabled={isPending} type="submit" variant="contained">
             Sign in
           </Button>
+          <br />
         </Stack>
       </form>
-      <Alert color="warning">
+      {/*Esto creo que no deberiamos de mostrarlo porque muestra el correo y contraseña
+        <Alert color="warning">
         Use{' '}
         <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
         frontend@univo.edu
@@ -147,7 +152,7 @@ export function SignInForm(): React.JSX.Element {
         <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
           frontend
         </Typography>
-      </Alert>
+      </Alert> */}
     </Stack>
   );
 }
