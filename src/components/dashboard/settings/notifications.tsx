@@ -37,7 +37,7 @@ export function Notifications(): React.JSX.Element {
             </Grid>
             <Grid md={4} sm={6} xs={12}>
               <Stack spacing={1}>
-                <Typography variant="h6">Phone</Typography>
+                <Typography variant="h6">Teléfono</Typography>
                 <FormGroup>
                   <FormControlLabel control={<Checkbox defaultChecked />} label="Email" />
                   <FormControlLabel control={<Checkbox />} label="Security updates" />
@@ -48,7 +48,7 @@ export function Notifications(): React.JSX.Element {
         </CardContent>
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
-          <Button variant="contained">Save changes</Button>
+          <Button variant="contained">Guardar cambios</Button>
         </CardActions>
       </Card>
     </form>
