@@ -16,7 +16,7 @@ import { paths } from '@/paths';
 import { isNavItemActive } from '@/lib/is-nav-item-active';
 import { Logo } from '@/components/core/logo';
 
-import { navItems } from './config';
+import { navItems } from './navItems';
 import { navIcons } from './nav-icons';
 
 export function SideNav(): React.JSX.Element {
