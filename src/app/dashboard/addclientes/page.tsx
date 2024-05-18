@@ -3,6 +3,7 @@
 
 import * as React from 'react';
 import Button from '@mui/material/Button';
+
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -59,6 +60,7 @@ const tipoPersona = [
   { value: '1', label: 'Natural' },
   { value: '2', label: 'Jurídica' },
 ] as const;
+
 const generoPersona = [
   { value: '1', label: 'Masculino' },
   { value: '2', label: 'Femenino' },
