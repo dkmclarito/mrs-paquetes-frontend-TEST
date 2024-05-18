@@ -1,13 +1,10 @@
-'use client';
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useColorScheme } from '@mui/material/styles';
-
 import { NoSsr } from '@/components/core/no-ssr';
 
-const HEIGHT = 60;
-const WIDTH = 60;
+const HEIGHT = 100; 
+const WIDTH = 100;  
 
 type Color = 'dark' | 'light';
 
@@ -19,15 +16,25 @@ export interface LogoProps {
 }
 
 export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }: LogoProps): React.JSX.Element {
-  let url: string;
+  const url = emblem
+    ? color === 'light'
+      ? '/assets/logo-emblem.svg'
+      : '/assets/logo-emblem--dark.svg'
+    : '/assets/mrpaquetes-logo.png';
 
-  if (emblem) {
-    url = color === 'light' ? '/assets/logo-emblem.svg' : '/assets/logo-emblem--dark.svg';
-  } else {
-    url = color === 'light' ? '/assets/mrpaquetes-logo.png' : '/assets/mrpaquetes-logo.png';
-  }
-
-  return <Box alt="logo" component="img" height={height} src={url} width={width} />;
+  return (
+    <Box
+      component="img"
+      alt="logo"
+      src={url}
+      sx={{
+        width: '225px',
+        objectFit: 'contain',
+        display: 'block',
+        margin: '0 auto',
+             }}
+    />
+  );
 }
 
 export interface DynamicLogoProps {
@@ -36,6 +43,7 @@ export interface DynamicLogoProps {
   emblem?: boolean;
   height?: number;
   width?: number;
+  
 }
 
 export function DynamicLogo({
@@ -43,6 +51,7 @@ export function DynamicLogo({
   colorLight = 'dark',
   height = HEIGHT,
   width = WIDTH,
+  
   ...props
 }: DynamicLogoProps): React.JSX.Element {
   const { colorScheme } = useColorScheme();
@@ -50,7 +59,7 @@ export function DynamicLogo({
 
   return (
     <NoSsr fallback={<Box sx={{ height: `${height}px`, width: `${width}px` }} />}>
-      <Logo color={color} height={height} width={width} {...props} />
+      <Logo color={color} emblem={props.emblem} height={height} width={width} />
     </NoSsr>
   );
 }
