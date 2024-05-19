@@ -178,8 +178,14 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={4} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Género</InputLabel>
-                <Select defaultValue="Masculino" label="genero" name="genero" variant="outlined">
+                <InputLabel id="genero-label">Género</InputLabel>
+                <Select
+                  labelId="genero-label"
+                  defaultValue="1"
+                  label="genero"
+                  name="genero"
+                  variant="outlined"
+                >
                   {generoPersona.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -190,8 +196,14 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={4} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Estado</InputLabel>
-                <Select defaultValue="Activo" label="estado" name="estado" variant="outlined">
+                <InputLabel id="estado-label">Estado</InputLabel>
+                <Select
+                  labelId="estado-label"
+                  defaultValue="1"
+                  label="estado"
+                  name="estado"
+                  variant="outlined"
+                >
                   {estadoPersona.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -215,8 +227,13 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Departamento</InputLabel>
-                <Select defaultValue="San Miguel" label="Departamento" name="departamento" variant="outlined">
+                <InputLabel id="departamento-label">Departamento</InputLabel>
+                <Select
+                  labelId="departamento-label"
+                  defaultValue="1"
+                  label="Departamento"
+                  name="departamento"
+                  variant="outlined">
                   {departamento.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -227,8 +244,13 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Municipio</InputLabel>
-                <Select defaultValue="San Miguel" label="Municipio" name="municipio" variant="outlined">
+                <InputLabel id="municipio-label">Municipio</InputLabel>
+                <Select
+                  labelId="municipio-label"
+                  defaultValue="1"
+                  label="Municipio"
+                  name="municipio"
+                  variant="outlined">
                   {municipio.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
