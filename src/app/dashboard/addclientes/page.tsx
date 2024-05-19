@@ -141,8 +141,15 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Tipo de persona</InputLabel>
-                <Select defaultValue="Natural" label="tipoPersona" name="tipoPersona" variant="outlined">
+                <InputLabel id="tipoPersona-label">Tipo de persona</InputLabel>
+                <Select
+                  defaultValue="1"
+                  id="tipoPersona"
+                  labelId="tipoPersona-label"
+                  label="Tipo de persona"
+                  name="tipoPersona"
+                  variant="outlined"
+                >
                   {tipoPersona.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -153,8 +160,14 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={6} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Es contribuyente</InputLabel>
-                <Select defaultValue="Si" label="contribuyente" name="contribuyente" variant="outlined">
+                <InputLabel id="contribuyente-label">Es contribuyente</InputLabel>
+                <Select
+                  labelId="contribuyente-label"
+                  defaultValue="1"
+                  label="Es contribuyente"
+                  name="contribuyente"
+                  variant="outlined"
+                >
                   {es_contribuyente.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
@@ -189,12 +202,14 @@ export default function Page(): React.JSX.Element {
             </Grid>
             <Grid md={4} xs={12}>
               <FormControl fullWidth>
-                <InputLabel>Fecha de Registro</InputLabel>
+                <InputLabel id="fechaR-label">Fecha de Registro</InputLabel>
                 <OutlinedInput
                   defaultValue={dayjs().format('YYYY-MM-DD')}
-                  label="fechaR"
+                  id="fechaR"
+                  aria-labelledby="fechaR-label"
+                  label="Fecha de Registro"
                   name="fechaR"
-                  type="tel"
+                  type="date"
                 />
               </FormControl>
             </Grid>
