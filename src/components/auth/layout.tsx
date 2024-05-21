@@ -56,9 +56,7 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
               "Sistema de recolección, envío, entrega y seguimiento de paquetes"
             </Typography>
           </Stack>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <DynamicLogo emblem={true} height={500} width={500} />  {/* Ajustar tamaño aquí también */}
-          </Box>
+          
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Box
               component="img"
