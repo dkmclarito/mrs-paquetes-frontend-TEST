@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useColorScheme } from '@mui/material/styles';
@@ -28,7 +30,7 @@ export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }:
       alt="logo"
       src={url}
       sx={{
-        width: '225px',
+        width: '125px',
         objectFit: 'contain',
         display: 'block',
         margin: '0 auto',

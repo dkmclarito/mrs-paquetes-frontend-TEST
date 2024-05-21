@@ -24,6 +24,10 @@
   outline: 2px solid var(--mui-palette-primary-main);
 }
 
+.mui-5th4s1 {
+  padding: 10% !important;
+}
+
 html {
   height: 100%;
 }
@@ -31,3 +35,4 @@ html {
 body {
   height: 100%;
 }
+

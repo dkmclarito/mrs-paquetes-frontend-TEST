@@ -164,8 +164,8 @@ export default function Page(): React.JSX.Element {
               <FormControl fullWidth>
                 <InputLabel id="contribuyente-label">Es contribuyente</InputLabel>
                 <Select
-                  labelId='contribuyente-label'
-                  defaultValue ="1"
+                  labelId="contribuyente-label"
+                  defaultValue="1"
                   label="Es contribuyente"
                   name="contribuyente"
                   variant="outlined"
