@@ -29,7 +29,8 @@ export function IntegrationCard({ integration }: IntegrationCardProps): React.JS
       <CardContent sx={{ flex: '1 1 auto' }}>
         <Stack spacing={2}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Avatar src={integration.logo} variant="square" />
+          <Avatar src={integration.logo} variant="square" style={{ height: '100px', width: '100px' }} />
+
           </Box>
           <Stack spacing={1}>
             <Typography align="center" variant="h5">
