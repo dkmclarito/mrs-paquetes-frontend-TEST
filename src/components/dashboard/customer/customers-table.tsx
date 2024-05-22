@@ -24,11 +24,9 @@ function noop(): void {
 
 export interface Customer {
   id: string;
-  avatar: string;
-  name: string;
+  nombre: string;
   email: string;
-  address: { city: string; state: string; country: string; street: string };
-  phone: string;
+  telefono: string;
   createdAt: Date;
 }
 
@@ -73,11 +71,12 @@ export function CustomersTable({
                   }}
                 />
               </TableCell>
+              <TableCell>ID</TableCell>
               <TableCell>Nombre</TableCell>
               <TableCell>Email</TableCell>
-              <TableCell>Ubicación</TableCell>
               <TableCell>Teléfono</TableCell>
               <TableCell>Signed Up</TableCell>
+              <TableCell>Acción</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -99,17 +98,15 @@ export function CustomersTable({
                     />
                   </TableCell>
                   <TableCell>
-                    <Stack sx={{ alignItems: 'center' }} direction="row" spacing={2}>
-                      <Avatar src={row.avatar} />
-                      <Typography variant="subtitle2">{row.name}</Typography>
-                    </Stack>
+                    {row.id}
+                  </TableCell>
+                  <TableCell>
+                    {row.nombre}
                   </TableCell>
                   <TableCell>{row.email}</TableCell>
-                  <TableCell>
-                    {row.address.city}, {row.address.state}, {row.address.country}
-                  </TableCell>
-                  <TableCell>{row.phone}</TableCell>
+                  <TableCell>{row.telefono}</TableCell>
                   <TableCell>{dayjs(row.createdAt).format('MMM D, YYYY')}</TableCell>
+                  <TableCell>Acciones a realizar</TableCell>
                 </TableRow>
               );
             })}
