@@ -4,7 +4,7 @@ import { paths } from '@/paths';
 export const navItems = [
   { key: 'overview', title: 'Dashboard', href: paths.dashboard.overview, icon: 'chart-pie' },
   { key: 'customers', title: 'Clientes', href: paths.dashboard.customers, icon: 'users' },
-  { key: 'paquetes', title: 'Paquetes', href: paths.dashboard.paquetes, icon: 'local-shipping' },
+  { key: 'packages', title: 'Paquetes', href: paths.dashboard.paquetes, icon: 'local-shipping' },
   { key: 'ordenes', title: 'Ordenes', href: paths.dashboard.ordenes, icon: 'assignment' },
   { key: 'integrations', title: 'Empleados', href: paths.dashboard.integrations, icon: 'plugs-connected' },
   { key: 'vehiculos', title: 'Vehículos', href: paths.dashboard.vehiculos, icon: 'car' },

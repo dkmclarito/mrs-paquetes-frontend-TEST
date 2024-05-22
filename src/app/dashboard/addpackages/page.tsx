@@ -3,7 +3,11 @@
 
 import * as React from 'react';
 import Button from '@mui/material/Button';
+
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Card from '@mui/material/Card';
@@ -97,7 +101,7 @@ export default function Page(): React.JSX.Element {
     >
 
       <Card>
-        <CardHeader subheader="La información se puede editar." title="Agregar Clientes" />
+        <CardHeader subheader="La información se puede editar." title="AGREGAR INPUTS CORRESPONDINTES Y AQUI EL TITULO / Agregar Paquete" />
         <Divider />
         <CardContent>
           <Grid container spacing={3}>
