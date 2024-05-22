@@ -4,18 +4,15 @@ import * as React from 'react';
 import RouterLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { ArrowSquareUpRight as ArrowSquareUpRightIcon } from '@phosphor-icons/react/dist/ssr/ArrowSquareUpRight';
 import { CaretUpDown as CaretUpDownIcon } from '@phosphor-icons/react/dist/ssr/CaretUpDown';
-
+import CustomIcon from '@/components/core/CustomIcon';
 import type { NavItemConfig } from '@/types/nav';
 import { paths } from '@/paths';
 import { isNavItemActive } from '@/lib/is-nav-item-active';
 import { Logo } from '@/components/core/logo';
-
 import { navItems } from './navItems';
 import { navIcons } from './nav-icons';
 
@@ -50,7 +47,7 @@ export function SideNav(): React.JSX.Element {
         '&::-webkit-scrollbar': { display: 'none' },
       }}
     >
-         <Stack spacing={2} sx={{ p: 3 }}>
+      <Stack spacing={2} sx={{ p: 3 }}>
         <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-flex' }}>
           <Logo color="light" height={32} width={122} />
         </Box>
@@ -69,9 +66,7 @@ export function SideNav(): React.JSX.Element {
             <Typography color="var(--mui-palette-neutral-400)" variant="body2">
               Mr. Paquetes
             </Typography>
-            <Typography color="inherit" variant="subtitle1">
-              
-            </Typography>
+            <Typography color="inherit" variant="subtitle1"></Typography>
           </Box>
           <CaretUpDownIcon />
         </Box>
@@ -107,7 +102,7 @@ interface NavItemProps extends Omit<NavItemConfig, 'items'> {
 
 function NavItem({ disabled, external, href, icon, matcher, pathname, title }: NavItemProps): React.JSX.Element {
   const active = isNavItemActive({ disabled, external, href, matcher, pathname });
-  const Icon = icon ? navIcons[icon] : null;
+  const IconComponent = icon ? navIcons[icon] : null;
 
   return (
     <li>
@@ -141,11 +136,12 @@ function NavItem({ disabled, external, href, icon, matcher, pathname, title }: N
         }}
       >
         <Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'center', flex: '0 0 auto' }}>
-          {Icon ? (
-            <Icon
+          {IconComponent ? (
+            <CustomIcon
+              icon={IconComponent}
               fill={active ? 'var(--NavItem-icon-active-color)' : 'var(--NavItem-icon-color)'}
               fontSize="var(--icon-fontSize-md)"
-              weight={active ? 'fill' : undefined}
+              weight={active ? 'fill' : 'regular'}
             />
           ) : null}
         </Box>
