@@ -30,6 +30,15 @@ export interface Customer {
   createdAt: Date;
 }
 
+// export interface Customer {
+//   id: string;
+//   nombre: string;
+//   email: string;
+//   ubicacion: string;
+//   telefono: string;
+//   signedUp: string;
+// }
+
 interface CustomersTableProps {
   count?: number;
   page?: number;

@@ -29,8 +29,7 @@ export async function getClientesFromDatabase(): Promise<Cliente[]> {
       FROM clientes AS c
       INNER JOIN departamento AS d ON c.id_departamento = d.id
       INNER JOIN municipios AS m ON c.id_municipio = m.id`
-    );
-
+    ); 
     const clientes: Cliente[] = rows.map(row => ({
       id: row.id as string,
       nombre: row.nombre as string,
